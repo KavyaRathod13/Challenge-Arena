@@ -58,7 +58,7 @@ interface AppState {
 const initialState: AppState = {
   user: {
     name: 'Kavya Patel',
-    avatar: '/src/assets/avatars/kavya.svg',
+    avatar: `${import.meta.env.BASE_URL}avatars/kavya.svg`,
     branch: 'Computer Engineering, CHARUSAT',
     level: 7,
     xp: 1840,
@@ -112,7 +112,10 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         const parsed = JSON.parse(saved) as AppState;
         return {
           ...parsed,
-          user: { ...parsed.user, avatar: '/src/assets/avatars/kavya.svg' },
+          user: {
+  ...parsed.user,
+  avatar: `${import.meta.env.BASE_URL}avatars/kavya.svg`,
+},
         };
       } catch { return initialState; }
     }
