@@ -14,7 +14,7 @@ function App() {
   return (
     <AppProvider>
       <ToastProvider>
-        <BrowserRouter>
+        <BrowserRouter basename="/Challenge-Arena">
           <Routes>
             <Route path="/" element={<AppLayout />}>
               <Route index element={<Home />} />
